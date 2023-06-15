@@ -1,0 +1,7 @@
+.myButton {
+	cursor: pointer;
+	font-size: 0.9rem;
+	padding: 5px 8px;
+	border: 1px solid transparent;
+	transition: all 0.3s ease-in-out;
+}
