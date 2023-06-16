@@ -8,6 +8,7 @@ const PostFilter = ({ filter, setFilter }) => {
 		<div className={classes.postFilterWrapper}>
 			<MySelect
 				value={filter.sort}
+				className={classes.mySelect}
 				defaultValue="date of creation"
 				options={[
 					{ value: "title", name: "title" },
@@ -17,6 +18,7 @@ const PostFilter = ({ filter, setFilter }) => {
 			/>
 			<MyInput
 				value={filter.query}
+				placeholder="Search"
 				onChange={event => setFilter({ ...filter, query: event.target.value })}
 			/>
 		</div>

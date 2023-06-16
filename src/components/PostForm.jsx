@@ -39,7 +39,7 @@ const PostForm = ({ create }) => {
 			<MyButton
 				disabled={!post.title.trim()}
 				onClick={addPost}
-			>Create post</MyButton>
+			>create</MyButton>
 		</form>
 	)
 }

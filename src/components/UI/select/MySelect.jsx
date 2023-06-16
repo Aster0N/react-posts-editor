@@ -1,7 +1,8 @@
-const MySelect = ({ options, defaultValue, value, onChange }) => {
+const MySelect = ({ options, defaultValue, value, onChange, className }) => {
 	return (
 		<select
 			value={value}
+			className={className}
 			onChange={event => onChange(event.target.value)}
 		>
 			<option value="default">{defaultValue}</option>
