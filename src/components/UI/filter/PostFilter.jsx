@@ -12,7 +12,7 @@ const PostFilter = ({ filter, setFilter }) => {
 				defaultValue="date of creation"
 				options={[
 					{ value: "title", name: "title" },
-					{ value: "description", name: "description" }
+					{ value: "body", name: "description" }
 				]}
 				onChange={value => setFilter({ ...filter, sort: value })}
 			/>

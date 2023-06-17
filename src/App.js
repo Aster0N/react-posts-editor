@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PostList from './components/PostList.jsx'
 import PostForm from './components/PostForm.jsx'
 import MyModal from './components/UI/modal/MyModal.jsx'
 import MyButton from './components/UI/button/MyButton.jsx'
 import PostFilter from './components/UI/filter/PostFilter.jsx'
+import Loader from './components/UI/loader/Loader.jsx'
 import { usePosts } from './hooks/usePosts.js'
+import { useFetching } from './hooks/useFetching.js'
+import PostsService from './API/PostsService.js'
 import "./styles/App.css"
 
 
@@ -13,6 +16,14 @@ function App() {
 	const [filter, setFilter] = useState({ sort: "", query: "" })
 	const [modalVisibility, setModalVisibility] = useState(false)
 	const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+	const [getPosts, isPostsLoading, postsFetchingError] = useFetching(async () => {
+		const posts = await PostsService.getAllPosts()
+		setPosts(posts)
+	})
+
+	useEffect(() => {
+		getPosts()
+	}, [])
 
 	const createNewPost = (newPost) => {
 		setPosts([...posts, newPost])
@@ -26,10 +37,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<MyButton
-				style={{ margin: "40px 0 0 0" }}
-				onClick={() => setModalVisibility(true)}
-			>Create post</MyButton>
+			<MyButton onClick={() => setModalVisibility(true)}>Create post</MyButton>
 			<MyModal
 				visible={modalVisibility}
 				setVisible={setModalVisibility}
@@ -42,7 +50,15 @@ function App() {
 				filter={filter}
 				setFilter={setFilter}
 			/>
-			<PostList remove={deletePost} posts={sortedAndSearchedPosts} />
+			{
+				postsFetchingError &&
+				<h2 className='posts-fetching-errror'>Error:<br />{postsFetchingError}</h2>
+			}
+			{
+				isPostsLoading
+					? <Loader />
+					: <PostList remove={deletePost} posts={sortedAndSearchedPosts} />
+			}
 		</div>
 	);
 }

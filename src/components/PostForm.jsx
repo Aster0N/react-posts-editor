@@ -5,7 +5,7 @@ import MyInput from './UI/input/MyInput.jsx'
 const PostForm = ({ create }) => {
 	const [post, setPost] = useState({
 		title: '',
-		description: ''
+		body: ''
 	})
 
 	const addPost = (event) => {
@@ -18,7 +18,7 @@ const PostForm = ({ create }) => {
 
 		setPost({
 			title: '',
-			description: ''
+			body: ''
 		})
 	}
 
@@ -31,8 +31,8 @@ const PostForm = ({ create }) => {
 				type="text"
 			/>
 			<MyInput
-				value={post.description}
-				onChange={e => setPost({ ...post, description: e.target.value })}
+				value={post.body}
+				onChange={e => setPost({ ...post, body: e.target.value })}
 				placeholder="description"
 				type="text"
 			/>

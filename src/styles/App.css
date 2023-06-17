@@ -13,6 +13,11 @@
 
 .App {
 	width: 800px;
+	padding: 30px 0;
+}
+
+.posts-fetching-errror {
+
 }
 
 .main-title {
