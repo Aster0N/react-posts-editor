@@ -53,6 +53,27 @@
 	background-color: #4d74c7;
 }
 
+/* post animations */
+
+.post-item-enter {
+	transform: translateY(50px);
+}
+
+.post-item-enter-active {
+	transform: translateY(0);
+	transition: all 300ms ease-out;
+}
+
+.post-item-exit {
+	opacity: 1;
+}
+
+.post-item-exit-active {
+	transform: translateX(-50px);
+	opacity: 0;
+	transition: all 300ms ease-out;
+}
+
 /* .delete-post:hover {
 	border: 1px solid #c42c2c;
 	color: #e90000;
