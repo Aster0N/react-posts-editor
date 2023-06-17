@@ -51,13 +51,18 @@ function App() {
 				setFilter={setFilter}
 			/>
 			{
-				postsFetchingError &&
-				<h2 className='posts-fetching-errror'>Error:<br />{postsFetchingError}</h2>
-			}
-			{
 				isPostsLoading
 					? <Loader />
 					: <PostList remove={deletePost} posts={sortedAndSearchedPosts} />
+			}
+			{
+				postsFetchingError &&
+				<div className='posts-fetching-errror'>
+					<h2>
+						Error<br />
+					</h2>
+					<span>{postsFetchingError}</span>
+				</div>
 			}
 		</div>
 	);

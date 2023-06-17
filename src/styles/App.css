@@ -17,7 +17,10 @@
 }
 
 .posts-fetching-errror {
-
+	padding: 15px;
+	border: 1px solid #c42c2c;
+	color: #e90000;
+	background-color: #ffc0c0;
 }
 
 .main-title {
@@ -78,9 +81,3 @@
 	opacity: 0;
 	transition: all 200ms ease-out;
 }
-
-/* .delete-post:hover {
-	border: 1px solid #c42c2c;
-	color: #e90000;
-	background-color: #ffc0c0;
-} */
