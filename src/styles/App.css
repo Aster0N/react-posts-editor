@@ -61,7 +61,7 @@
 
 .post-item-enter-active {
 	transform: translateY(0);
-	transition: all 300ms ease-out;
+	transition: all 200ms ease-out;
 }
 
 .post-item-exit {
@@ -71,7 +71,7 @@
 .post-item-exit-active {
 	transform: translateX(-50px);
 	opacity: 0;
-	transition: all 300ms ease-out;
+	transition: all 200ms ease-out;
 }
 
 /* .delete-post:hover {
