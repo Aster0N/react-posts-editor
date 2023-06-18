@@ -1,0 +1,32 @@
+.main-title {
+	font-size: 1.5em;
+	margin: 25px 0 0 0;
+}
+
+.post-item {
+	margin: 20px 0 0 0;
+	padding: 15px;
+	border: 1px solid #4e4e4e;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post-item-enter {
+	transform: translateY(50px);
+}
+
+.post-item-enter-active {
+	transform: translateY(0);
+	transition: all 200ms ease-out;
+}
+
+.post-item-exit {
+	opacity: 1;
+}
+
+.post-item-exit-active {
+	transform: translateX(-50px);
+	opacity: 0;
+	transition: all 200ms ease-out;
+}

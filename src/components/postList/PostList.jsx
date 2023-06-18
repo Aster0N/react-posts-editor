@@ -1,9 +1,10 @@
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import PostItem from "./PostItem"
+import PostItem from "../postItem/PostItem"
+import './PostList.css'
 
 const PostList = ({ posts, remove }) => {
 	return (
-		<div className="posts-list">
+		<div>
 			{!posts.length
 				? <h1 className="main-title">Posts not found</h1>
 				: <h1 className="main-title">Your posts</h1>

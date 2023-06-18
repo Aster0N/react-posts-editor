@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react'
-import PostList from '../components/PostList.jsx'
-import PostForm from '../components/PostForm.jsx'
-import MyModal from '../components/UI/modal/MyModal.jsx'
-import MyButton from '../components/UI/button/MyButton.jsx'
-import PostFilter from '../components/UI/filter/PostFilter.jsx'
-import Loader from '../components/UI/loader/Loader.jsx'
-import Pagination from '../components/UI/pagination/Pagination.jsx'
-import { usePosts } from '../hooks/usePosts.js'
-import { useFetching } from '../hooks/useFetching.js'
-import PostsService from '../API/PostsService.js'
-import { getPagesCount } from '../utils/pagesCount.js'
-import "../styles/App.css"
+import PostList from '../../components/postList/PostList.jsx'
+import PostForm from '../../components/postForm/PostForm.jsx'
+import MyModal from '../../components/UI/modal/MyModal.jsx'
+import MyButton from '../../components/UI/button/MyButton.jsx'
+import PostFilter from '../../components/UI/filter/PostFilter.jsx'
+import Loader from '../../components/UI/loader/Loader.jsx'
+import Pagination from '../../components/UI/pagination/Pagination.jsx'
+import { usePosts } from '../../hooks/usePosts.js'
+import { useFetching } from '../../hooks/useFetching.js'
+import PostsService from '../../API/PostsService.js'
+import { getPagesCount } from '../../utils/pagesCount.js'
+import "../../styles/App.css"
+import classes from './Posts.module.css'
 
 
-const Pages = () => {
+const Posts = () => {
 	const [posts, setPosts] = useState([])
 	const [filter, setFilter] = useState({ sort: "", query: "" })
 	const [modalVisibility, setModalVisibility] = useState(false)
@@ -54,7 +55,7 @@ const Pages = () => {
 			>
 				<PostForm create={createNewPost} />
 			</MyModal>
-			<div className="divider-line"></div>
+			<div className={classes.dividerLine}></div>
 			<span>Sort by: </span>
 			<PostFilter
 				filter={filter}
@@ -65,7 +66,7 @@ const Pages = () => {
 				: <PostList remove={deletePost} posts={sortedAndSearchedPosts} />
 			}
 			{postsFetchingError &&
-				<div className='posts-fetching-errror'>
+				<div className={classes.postsFetchingErrror}>
 					<h2>
 						Error<br />
 					</h2>
@@ -81,4 +82,4 @@ const Pages = () => {
 	);
 }
 
-export default Pages;
+export default Posts;

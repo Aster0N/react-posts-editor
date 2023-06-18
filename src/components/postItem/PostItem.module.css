@@ -1,0 +1,35 @@
+.postItem {
+	margin: 20px 0 0 0;
+	padding: 15px;
+	border: 1px solid #4e4e4e;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.postActions {
+	align-self: start;
+}
+
+.postTitle {
+	font-weight: bold;
+}
+
+.postId {
+	color: #c0c0c0;
+	font-size: 0.7rem;
+}
+
+.postInfo {
+	padding: 0 15px 0 0;
+}
+
+.deletePostBtn {
+	transition: all 0.3s ease-in;
+}
+
+.deletePostBtn:hover {
+	border: 1px solid #c42c2c;
+	color: #e90000;
+	background-color: #ffc0c0;
+}

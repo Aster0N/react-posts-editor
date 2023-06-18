@@ -1,0 +1,13 @@
+.postsFetchingErrror {
+	padding: 15px;
+	border: 1px solid #c42c2c;
+	color: #e90000;
+	background-color: #ffc0c0;
+}
+
+.dividerLine {
+	margin: 10px 0;
+	width: 100%;
+	height: 2px;
+	background-color: #4d74c7;
+}
