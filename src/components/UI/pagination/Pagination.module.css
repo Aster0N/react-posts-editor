@@ -1,0 +1,24 @@
+.pageNavigation {
+	width: 100%;
+	margin: 20px 0 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pageButton {
+	padding: 5px;
+	min-width: 35px;
+	min-height: 35px;
+	margin: 0 1px 0 0;
+	transition: all 0.3s ease-in;
+}
+
+.pageButton.pageActive {
+	background-color: #4d74c7;
+	color: aliceblue;
+}
+
+.pageButton:hover {
+	border: 1px solid #4d74c7;
+}

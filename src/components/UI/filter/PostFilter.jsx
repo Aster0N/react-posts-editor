@@ -1,5 +1,4 @@
 import classes from './PostsFilter.module.css'
-
 import MySelect from '../select/MySelect.jsx'
 import MyInput from '../input/MyInput.jsx'
 

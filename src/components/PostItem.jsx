@@ -11,7 +11,7 @@ const PostItem = ({ post, remove }) => {
 			<div className="post-actions">
 				<MyButton
 					onClick={() => remove(post)}
-					className="delete-post"
+					className="delete-post-btn"
 				>delete</MyButton>
 			</div>
 		</div>

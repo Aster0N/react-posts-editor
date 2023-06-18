@@ -61,6 +61,16 @@
 	background-color: #4d74c7;
 }
 
+.delete-post-btn {
+	transition: all 0.3s ease-in;
+}
+
+.delete-post-btn:hover {
+	border: 1px solid #c42c2c;
+	color: #e90000;
+	background-color: #ffc0c0;
+}
+
 /* post animations */
 
 .post-item-enter {
@@ -81,3 +91,5 @@
 	opacity: 0;
 	transition: all 200ms ease-out;
 }
+
+/* / post animations */
