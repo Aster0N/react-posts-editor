@@ -1,0 +1,25 @@
+.commentsWrapper {
+	margin: 10px 0;
+}
+
+.postComment {
+	transition: all .3s ease-out;
+	border-left: 2px solid #4e4e4e;
+	padding: 10px;
+}
+
+.postComment:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.postComment:hover {
+	background-color: #f7fdff;
+}
+
+.commentUser {
+	margin: 0 0 10px 0;
+	font-size: .9rem;
+	text-decoration: underline;
+	text-transform: lowercase;
+	color: #4e4e4e;
+}

@@ -5,18 +5,32 @@ import PostsService from "../../API/PostsService"
 import Loader from '../../components/UI/loader/Loader'
 import "../../styles/App.css"
 import classes from './PostIdPage.module.css'
+import PostComments from '../../components/comments/PostComments'
 
 const PostIdPage = () => {
 	const params = useParams()
 	const [post, setPost] = useState({})
-
-	const [fetchPostById, isPostLoading, postFetchingError] = useFetching(async (id) => {
+	const [comments, setComments] = useState([])
+	const [
+		fetchPostById,
+		isPostLoading,
+		postFetchingError
+	] = useFetching(async (id) => {
 		const response = await PostsService.getPostById(id)
 		setPost(response.data)
+	})
+	const [
+		fetchCommentsByPostId,
+		isCommentsLoading,
+		commentsFetchingError
+	] = useFetching(async (id) => {
+		const response = await PostsService.getCommentsByPostId(id)
+		setComments(response.data)
 	})
 
 	useEffect(() => {
 		fetchPostById(params.id)
+		fetchCommentsByPostId(params.id)
 	}, [])
 
 	return (
@@ -42,6 +56,19 @@ const PostIdPage = () => {
 							Post fetching error<br />
 						</h2>
 						<span>{postFetchingError}</span>
+					</div>
+				}
+				<h1 className="main-title">Comments</h1>
+				{isCommentsLoading
+					? <Loader />
+					: <PostComments comments={comments} />
+				}
+				{commentsFetchingError &&
+					<div className="error-block">
+						<h2>
+							Comments fetching error<br />
+						</h2>
+						<span>{commentsFetchingError}</span>
 					</div>
 				}
 			</div>
