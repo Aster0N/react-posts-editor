@@ -66,7 +66,7 @@ const Posts = () => {
 				: <PostList remove={deletePost} posts={sortedAndSearchedPosts} />
 			}
 			{postsFetchingError &&
-				<div className={classes.postsFetchingErrror}>
+				<div className="error-block">
 					<h2>
 						Error<br />
 					</h2>

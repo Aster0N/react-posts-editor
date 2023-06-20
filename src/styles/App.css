@@ -20,3 +20,10 @@
 	padding: 30px 0;
 	margin: 0 auto;
 }
+
+.error-block {
+	padding: 15px;
+	border: 1px solid #c42c2c;
+	color: #e90000;
+	background-color: #ffc0c0;
+}

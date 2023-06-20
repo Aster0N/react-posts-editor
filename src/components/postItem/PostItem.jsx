@@ -1,7 +1,10 @@
 import MyButton from "../UI/button/MyButton"
 import classes from './PostItem.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const PostItem = ({ post, remove }) => {
+	const navigate = useNavigate()
+
 	return (
 		<div className={classes.postItem}>
 			<div className={classes.postInfo}>
@@ -10,6 +13,10 @@ const PostItem = ({ post, remove }) => {
 				<p>{post.body}</p>
 			</div>
 			<div className={classes.postActions}>
+				<MyButton
+					onClick={() => navigate(`/posts/${post.id}`)}
+					className={classes.openPostBtn}
+				>open</MyButton>
 				<MyButton
 					onClick={() => remove(post)}
 					className={classes.deletePostBtn}

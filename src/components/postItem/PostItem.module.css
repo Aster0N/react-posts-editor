@@ -9,6 +9,10 @@
 
 .postActions {
 	align-self: start;
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .postTitle {
@@ -24,7 +28,8 @@
 	padding: 0 15px 0 0;
 }
 
-.deletePostBtn {
+.deletePostBtn,
+.openPostBtn {
 	transition: all 0.3s ease-in;
 }
 
@@ -32,4 +37,9 @@
 	border: 1px solid #c42c2c;
 	color: #e90000;
 	background-color: #ffc0c0;
+}
+
+.openPostBtn:hover {
+	border: 1px solid #746aff;
+	background-color: #ffffff;
 }
