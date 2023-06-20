@@ -25,12 +25,21 @@ const PostIdPage = () => {
 			<div>
 				{isPostLoading
 					? <Loader />
-					: <h1>Post <span className={classes.postId}>#{params.id}</span></h1>
+					:
+					<div>
+						<h1 className="main-title">
+							Post <span className={classes.postId}>#{params.id}</span>
+						</h1>
+						<div className={classes.postInfo}>
+							<h4 className={classes.postTitle}>{post.title}</h4>
+							<p >{post.body}</p>
+						</div>
+					</div>
 				}
 				{postFetchingError &&
 					<div className="error-block">
 						<h2>
-							Error<br />
+							Post fetching error<br />
 						</h2>
 						<span>{postFetchingError}</span>
 					</div>
