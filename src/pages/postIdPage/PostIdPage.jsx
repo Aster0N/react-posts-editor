@@ -58,7 +58,6 @@ const PostIdPage = () => {
 						<span>{postFetchingError}</span>
 					</div>
 				}
-				<h1 className="main-title">Comments</h1>
 				{isCommentsLoading
 					? <Loader />
 					: <PostComments comments={comments} />
