@@ -3,10 +3,16 @@
 	height: 50px;
 	padding: 0 20px;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #e3ecff;
+}
+
+.navbarLinks {
+	display: flex;
 	justify-content: start;
 	align-items: center;
 	gap: 5px;
-	background-color: #e3ecff;
 }
 
 .link {
@@ -17,4 +23,14 @@
 
 .link:hover {
 	color: #fc5329;
+}
+
+.logoutBtn {
+	transition: all .3s ease-in;
+	border: 1px solid transparent;
+}
+
+.logoutBtn:hover {
+	border: 1px solid #fc5329;
+	background-color: #fff;
 }
