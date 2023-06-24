@@ -1,7 +1,7 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { publicRoutes, privateRoutes } from '../../router/index.js'
 import { useContext } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { AuthContext } from '../../context/index.js'
+import { privateRoutes, publicRoutes } from '../../router/index.js'
 import Loader from '../UI/loader/Loader.jsx'
 
 const AppRouter = () => {
@@ -20,7 +20,6 @@ const AppRouter = () => {
 						key={route.path}
 						path={route.path}
 						element={<route.element />}
-						exact={route.exact}
 					/>
 				)}
 				<Route path="*" element={<Navigate to="/posts" />} />
@@ -32,7 +31,6 @@ const AppRouter = () => {
 						key={route.path}
 						path={route.path}
 						element={<route.element />}
-						exact={route.exact}
 					/>
 				)}
 				<Route path="*" element={<Navigate to="/login" />} />

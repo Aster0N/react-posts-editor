@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { AuthContext } from '../../context/index.js'
 import MyButton from "../../components/UI/button/MyButton"
 import MyInput from "../../components/UI/input/MyInput"
-import classes from './Login.module.css'
+import { AuthContext } from '../../context/index.js'
 import "../../styles/App.css"
+import classes from './Login.module.css'
 
 const Login = () => {
 	const { isAuth, setIsAuth } = useContext(AuthContext)

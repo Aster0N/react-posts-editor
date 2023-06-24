@@ -6,14 +6,14 @@ import PostIdPage from "../pages/postIdPage/PostIdPage.jsx"
 import Posts from "../pages/postsPage/Posts.jsx"
 
 export const privateRoutes = [
-	{ path: '/', element: Home, exact: true },
-	{ path: '/about', element: About, exact: true },
-	{ path: '/posts', element: Posts, exact: true },
-	{ path: '/posts/:id', element: PostIdPage, exact: true },
-	{ path: '/error', element: Error, exact: true },
+	{ path: '/', element: Home },
+	{ path: '/about', element: About },
+	{ path: '/posts', element: Posts },
+	{ path: '/posts/:id', element: PostIdPage },
+	{ path: '/error', element: Error },
 ]
 
 export const publicRoutes = [
-	{ path: '/login', element: Login, exact: true },
-	{ path: '/error', element: Error, exact: true },
+	{ path: '/login', element: Login },
+	{ path: '/error', element: Error },
 ]
