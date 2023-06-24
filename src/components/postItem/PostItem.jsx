@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import MyButton from "../UI/button/MyButton"
 import classes from './PostItem.module.css'
-import { useNavigate } from 'react-router-dom'
 
 const PostItem = ({ post, remove }) => {
 	const navigate = useNavigate()

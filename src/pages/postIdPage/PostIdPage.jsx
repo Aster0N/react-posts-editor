@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import { useFetching } from "../../hooks/useFetching"
 import PostsService from "../../API/PostsService"
 import Loader from '../../components/UI/loader/Loader'
+import PostComments from '../../components/comments/PostComments'
+import { useFetching } from "../../hooks/useFetching"
 import "../../styles/App.css"
 import classes from './PostIdPage.module.css'
-import PostComments from '../../components/comments/PostComments'
 
 const PostIdPage = () => {
 	const params = useParams()

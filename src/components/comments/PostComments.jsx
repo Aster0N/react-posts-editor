@@ -1,5 +1,5 @@
-import classes from './PostComments.module.css'
 import "../../styles/App.css"
+import classes from './PostComments.module.css'
 
 const PostComments = ({ comments }) => {
 	if (!comments.length) {

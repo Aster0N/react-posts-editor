@@ -1,16 +1,14 @@
-import { useState, useEffect } from 'react'
-import PostList from '../../components/postList/PostList.jsx'
-import PostForm from '../../components/postForm/PostForm.jsx'
-import MyModal from '../../components/UI/modal/MyModal.jsx'
+import { useEffect, useState } from 'react'
+import PostsService from '../../API/PostsService.js'
 import MyButton from '../../components/UI/button/MyButton.jsx'
 import PostFilter from '../../components/UI/filter/PostFilter.jsx'
 import Loader from '../../components/UI/loader/Loader.jsx'
+import MyModal from '../../components/UI/modal/MyModal.jsx'
 import Pagination from '../../components/UI/pagination/Pagination.jsx'
-import { usePosts } from '../../hooks/usePosts.js'
+import PostForm from '../../components/postForm/PostForm.jsx'
+import PostList from '../../components/postList/PostList.jsx'
 import { useFetching } from '../../hooks/useFetching.js'
-import PostsService from '../../API/PostsService.js'
 import { getPagesCount } from '../../utils/pagesCount.js'
-import "../../styles/App.css"
 import classes from './Posts.module.css'
 
 
@@ -26,7 +24,7 @@ const Posts = () => {
 		const response = await PostsService.getAllPosts(limit, page)
 		setPosts(response.data)
 		const totalPages = response.headers['x-total-count']
-		setTotalPages(getPagesCount(totalPages, limit));
+		setTotalPages(getPagesCount(totalPages, limit))
 	})
 
 	useEffect(() => {
@@ -79,7 +77,7 @@ const Posts = () => {
 				changePage={changePage}
 			/>
 		</div>
-	);
+	)
 }
 
-export default Posts;
+export default Posts
