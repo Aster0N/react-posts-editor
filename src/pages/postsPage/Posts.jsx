@@ -8,6 +8,7 @@ import Pagination from '../../components/UI/pagination/Pagination.jsx'
 import PostForm from '../../components/postForm/PostForm.jsx'
 import PostList from '../../components/postList/PostList.jsx'
 import { useFetching } from '../../hooks/useFetching.js'
+import { usePosts } from '../../hooks/usePosts.js'
 import { getPagesCount } from '../../utils/pagesCount.js'
 import classes from './Posts.module.css'
 
